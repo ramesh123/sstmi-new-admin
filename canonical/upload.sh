@@ -1,0 +1,1 @@
+aws s3 cp ./canonical_mapping_with_ids.json s3://sstmi-temple-transactions/canonical_mapping_with_ids.json

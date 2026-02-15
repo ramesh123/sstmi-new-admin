@@ -1,0 +1,8 @@
+{
+    "Template": {
+        "TemplateName": "Announcement",
+        "SubjectPart": "{{Subject}}",
+        "TextPart": "Dear {{Name}},\n\n{{body}}\n\n",
+        "HtmlPart": "<div style='text-align: center; margin: 0 auto; max-width: 500px;'><img src='https://sstmi.org/assets/logo/logo-mobile.png' alt='Sri Subramanya Swamy Cultural Center' style='max-width: 200px;'></div><div style='max-width: 500px; margin: 0 auto; padding: 10px; font-family: Arial, sans-serif; line-height: 1.5;'><p>Dear <strong>{{Name}}</strong>,</p><p>{{body}}</p></div>"
+    }
+}

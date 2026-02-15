@@ -1,0 +1,56 @@
+aws dynamodb scan \
+    --table-name temple-transactions \
+    --filter-expression "DevoteeEmail = :email" \
+    --expression-attribute-values '{":email": {"S": "usharma@mmsholdings.com"}}' \
+    --query 'Items[*].TransactionId.S' \
+    --output text | tr '\t' '\n' | while read tid; do
+    aws dynamodb update-item \
+        --table-name temple-transactions \
+        --key '{"TransactionId": {"S": "'"$tid"'"}}' \
+        --update-expression "SET DevoteeName = :name" \
+        --expression-attribute-values '{":name": {"S": "Madan & Uma Sharma"}}'
+done
+
+
+aws dynamodb scan \
+    --table-name temple-devotees \
+    --filter-expression "Email = :email" \
+    --expression-attribute-values '{":email": {"S": "usharma@mmsholdings.com"}}' \
+    --query 'Items[*].DevoteeId.S' \
+    --output text | tr '\t' '\n' | while read did; do
+    aws dynamodb update-item \
+        --table-name temple-devotees \
+        --key '{"DevoteeId": {"S": "'"$did"'"}}' \
+        --update-expression "SET FullName = :name, FirstName = :first, LastName = :last" \
+        --expression-attribute-values '{":name": {"S": "Madan & Uma Sharma"}, ":first": {"S": "Madan & Uma"}, ":last": {"S": "Sharma"}}'
+done
+
+
+
+# Update temple-transactions
+aws dynamodb scan \
+    --table-name temple-transactions \
+    --filter-expression "DevoteeEmail = :email" \
+    --expression-attribute-values '{":email": {"S": "hemanthkumar2425@gmail.com"}}' \
+    --query 'Items[*].TransactionId.S' \
+    --output text | tr '\t' '\n' | while read tid; do
+    aws dynamodb update-item \
+        --table-name temple-transactions \
+        --key '{"TransactionId": {"S": "'"$tid"'"}}' \
+        --update-expression "SET DevoteeName = :name" \
+        --expression-attribute-values '{":name": {"S": "Hemanth Kumar Atmakuri & Anusha Majeti"}}'
+done
+
+# Update temple-devotees
+aws dynamodb scan \
+    --table-name temple-devotees \
+    --filter-expression "Email = :email" \
+    --expression-attribute-values '{":email": {"S": "hemanthkumar2425@gmail.com"}}' \
+    --query 'Items[*].DevoteeId.S' \
+    --output text | tr '\t' '\n' | while read did; do
+    aws dynamodb update-item \
+        --table-name temple-devotees \
+        --key '{"DevoteeId": {"S": "'"$did"'"}}' \
+        --update-expression "SET FullName = :name, FirstName = :first, LastName = :last" \
+        --expression-attribute-values '{":name": {"S": "Hemanth Kumar Atmakuri & Anusha Majeti"}, ":first": {"S": "Hemanth Kumar Atmakuri & Anusha"}, ":last": {"S": "Majeti"}}'
+done

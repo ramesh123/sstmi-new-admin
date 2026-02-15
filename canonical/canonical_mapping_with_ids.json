@@ -1,0 +1,724 @@
+{
+  "POOJA": {
+    "ARCHANA": {
+      "display_name": "Archana",
+      "description": "Chanting of divine names with offerings",
+      "variations": [
+        "ARCHANA",
+        "Pooja - ARCHANA",
+        "Pooja - Archana"
+      ],
+      "id": "POOJA_ARCHANA"
+    },
+    "AARATHI": {
+      "display_name": "Aarathi Donation",
+      "description": "Donation for daily aarathi ceremony",
+      "variations": [
+        "Donation - Aarathi"
+      ],
+      "id": "POOJA_AARATHI"
+    },
+    "SATYANARAYANA_VRATHAM": {
+      "display_name": "Satyanarayana Vratham",
+      "description": "Pooja for prosperity and fulfillment of wishes",
+      "variations": [
+        "Pooja - SATYANARAYANA VRATHAM",
+        "Priest Booking - SATHYANARAYANA VRATHAM",
+        "Sathyanarayana Vratham"
+      ],
+      "id": "POOJA_SATYANARAYANA_VRATHAM"
+    },
+    "CAR_POOJA": {
+      "display_name": "Car Pooja",
+      "description": "Blessing ceremony for new vehicles",
+      "variations": [
+        "CAR POOJA",
+        "Car",
+        "Pooja - CAR POOJA"
+      ],
+      "id": "POOJA_CAR_POOJA"
+    },
+    "VEL_POOJA": {
+      "display_name": "Vel Pooja",
+      "description": "Pooja to Lord Murugan's divine spear",
+      "variations": [
+        "VEL POOJA"
+      ],
+      "id": "POOJA_VEL_POOJA"
+    },
+    "GRUHA_PRAVESHAM": {
+      "display_name": "Gruha Pravesham",
+      "description": "House warming ceremony",
+      "variations": [
+        "Pooja - GRUHA PRAVESHAM",
+        "Pooja - GRUHA PRAVESHAM & SATYANARAYANA VRATHAM",
+        "Priest Booking - GRUHAPRAVESHAM",
+        "Gruha"
+      ],
+      "id": "POOJA_GRUHA_PRAVESHAM"
+    },
+    "KALYANAM": {
+      "display_name": "Kalyanam (Divine Wedding)",
+      "description": "Ceremonial wedding of deities",
+      "variations": [
+        "Kalyanam",
+        "Kalyanothsvam",
+        "Priest Booking - KALYANOTHSAVAM",
+        "Sri Subramanyam Swamy Kalyanam",
+        "Subramanya kalyanam",
+        "Valli Kalyanam",
+        "Thru kalyanam"
+      ],
+      "id": "POOJA_KALYANAM"
+    },
+    "KESHAKANDANAM": {
+      "display_name": "Keshakandanam (Head Tonsure)",
+      "description": "First hair removal ceremony for children",
+      "variations": [
+        "Priest Booking - KESHAKANDANAM"
+      ],
+      "id": "POOJA_KESHAKANDANAM"
+    },
+    "PUNYAHAVACHANAM": {
+      "display_name": "Punyahavachanam",
+      "description": "Purification ceremony before major events",
+      "variations": [
+        "Priest Booking - PUNYAHAVACHANAM",
+        "Punyahavachanam"
+      ],
+      "id": "POOJA_PUNYAHAVACHANAM"
+    },
+    "SHASHTIPOORTI_SHANTI": {
+      "display_name": "Shashtipoorti Shanti (60th Birthday)",
+      "description": "Special pooja for 60th birthday celebration",
+      "variations": [
+        "Priest Booking - SHASHTIPOORTI SHANTI (60 BIRTHDAY)"
+      ],
+      "id": "POOJA_SHASHTIPOORTI_SHANTI"
+    },
+    "AKSHARA_ABHYASAM": {
+      "display_name": "Akshara Abhyasam",
+      "description": "Initiation ceremony for child's education",
+      "variations": [
+        "Akshara Abhyasam",
+        "Aksharaabhyasam"
+      ],
+      "id": "POOJA_AKSHARA_ABHYASAM"
+    },
+    "MURUGAR_TRISHATI_ARCHANA": {
+      "display_name": "Murugar Trishati Archana",
+      "description": "300 names archana for Lord Murugan",
+      "variations": [
+        "Pooja - MURUGAR TRISHATI ARCHANA"
+      ],
+      "id": "POOJA_MURUGAR_TRISHATI_ARCHANA"
+    },
+    "SRI_VALLI_DEVA_SENAPATHE_POOJA": {
+      "display_name": "Sri Valli Deva Senapathe Pooja",
+      "description": "Pooja to Lord Murugan with consorts",
+      "variations": [
+        "Pooja - SRI VALLI DEVA SENAPATHE"
+      ],
+      "id": "POOJA_SRI_VALLI_DEVA_SENAPATHE_POOJA"
+    },
+    "HANUMAN_CHALISA": {
+      "display_name": "Hanuman Chalisa 108 Times",
+      "description": "Recitation of Hanuman Chalisa",
+      "variations": [
+        "Hanuman Chalisa 108 times"
+      ],
+      "id": "POOJA_HANUMAN_CHALISA"
+    },
+    "THIRUPAAVAI_GHOSHTI": {
+      "display_name": "Thirupaavai Ghoshti",
+      "description": "Recitation of sacred Tamil hymns",
+      "variations": [
+        "Thirupaavai  Ghoshti"
+      ],
+      "id": "POOJA_THIRUPAAVAI_GHOSHTI"
+    },
+    "SAHASRANAMA": {
+      "display_name": "Sahasranama",
+      "description": "Chanting of 1000 divine names",
+      "variations": [
+        "Sahasranama"
+      ],
+      "id": "POOJA_SAHASRANAMA"
+    },
+    "GENERAL_ABHISHEKAM": {
+      "display_name": "Abhishekam",
+      "description": "Ritual bathing of deity with sacred substances",
+      "variations": [
+        "ABHISHEKAM",
+        "Abhishekam - ABHISHEKAM",
+        "Pooja - ABHISHEKAM",
+        "Milk"
+      ],
+      "id": "POOJA_GENERAL_ABHISHEKAM"
+    },
+    "SHASTI_ABHISHEKAM": {
+      "display_name": "Shasti Abhishekam",
+      "description": "Special abhishekam on Shasti days",
+      "variations": [
+        "Abhishekam - SHASTI ABHISHEKAM",
+        "Shasti Abhishekam",
+        "Shashti"
+      ],
+      "id": "POOJA_SHASTI_ABHISHEKAM"
+    },
+    "RUDRABHISHEKAM": {
+      "display_name": "Rudrabhishekam",
+      "description": "Abhishekam to Lord Shiva with Rudram chanting",
+      "variations": [
+        "Rudrabhishekam",
+        "Ekadasha Rudrabhishekam"
+      ],
+      "id": "POOJA_RUDRABHISHEKAM"
+    },
+    "SHIVA_ABHISHEKAM": {
+      "display_name": "Shiva Abhishekam",
+      "description": "Abhishekam to Lord Shiva",
+      "variations": [
+        "Shiva Abhishekam"
+      ],
+      "id": "POOJA_SHIVA_ABHISHEKAM"
+    },
+    "SHANI_TAILABHISHEKAM": {
+      "display_name": "Shani Graham Tailabhishekam",
+      "description": "Oil abhishekam to Saturn deity for relief",
+      "variations": [
+        "SHANI GRAHAM TAILABHISHEKAM"
+      ],
+      "id": "POOJA_SHANI_TAILABHISHEKAM"
+    },
+    "GANAPATHI_HOMAM": {
+      "display_name": "Ganapathi Homam",
+      "description": "Fire ceremony for Lord Ganesha",
+      "variations": [
+        "Homam - GANAPATHI HOMAM",
+        "Gana Homam"
+      ],
+      "id": "POOJA_GANAPATHI_HOMAM"
+    },
+    "GRAHANA_SHANTHI_HOMAM": {
+      "display_name": "Grahana Shanthi Homam",
+      "description": "Homam performed during eclipses for peace",
+      "variations": [
+        "Homam - GRAHANA SHANTHI HOMAM"
+      ],
+      "id": "POOJA_GRAHANA_SHANTHI_HOMAM"
+    },
+    "MAHA_SUDARSHANA_HOMAM": {
+      "display_name": "Maha Sudarshana Homam",
+      "description": "Homam to Lord Vishnu's divine discus",
+      "variations": [
+        "Homam - MAHA SUDARSHANA HOMAM"
+      ],
+      "id": "POOJA_MAHA_SUDARSHANA_HOMAM"
+    },
+    "CHANDI_HOMAM": {
+      "display_name": "Chandi Homam",
+      "description": "Fire ceremony to Goddess Durga",
+      "variations": [
+        "Chandi Homam",
+        "Chandee Homam"
+      ],
+      "id": "POOJA_CHANDI_HOMAM"
+    },
+    "NAVAGRAHA_SHANTHI_HOMAM": {
+      "display_name": "Navagraha Shanthi Homam",
+      "description": "Homam for nine planets for peace and prosperity",
+      "variations": [
+        "Navagraha & Shanthi Homam"
+      ],
+      "id": "POOJA_NAVAGRAHA_SHANTHI_HOMAM"
+    },
+    "SHATHRU_SAMHARA_HOMAM": {
+      "display_name": "Shathru Samhara Homam",
+      "description": "Homam for protection from enemies",
+      "variations": [
+        "Event Donation - SHATHRU SAMHARA HOMAM"
+      ],
+      "id": "POOJA_SHATHRU_SAMHARA_HOMAM"
+    }
+  },
+  "VIGRAHAM": {
+    "SRINIVASA_PERUMAL": {
+      "display_name": "Srinivasa Perumal Vigraham",
+      "description": "Sponsorship for Lord Vishnu idol",
+      "variations": [
+        "Deity Donation - Srinivasa Perumal",
+        "Donation - Srinivasa Perumal"
+      ],
+      "id": "VIGRAHAM_SRINIVASA_PERUMAL"
+    },
+    "MURUGAR_DEITY": {
+      "display_name": "Murugar Deity 8.5ft",
+      "description": "Sponsorship for Lord Murugan idol",
+      "variations": [
+        "Donation - MURUGAR DEITY 8.5ft",
+        "Donation - Murugar Deity 8.5ft"
+      ],
+      "id": "VIGRAHAM_MURUGAR_DEITY"
+    },
+    "DURGA_AMMAVARU": {
+      "display_name": "Sri Durga Ammavaru Vigraham",
+      "description": "Sponsorship for Goddess Durga idol",
+      "variations": [
+        "Donation - SRI DURGA AMMAVARU VIGRAHAM"
+      ],
+      "id": "VIGRAHAM_DURGA_AMMAVARU"
+    },
+    "SUBRAMANYA_SWAMY_SHANMUKHA": {
+      "display_name": "Sri Subramanya Swamy Shanmukha Vigraham",
+      "description": "Sponsorship for Sri Subramanya Swamy idol",
+      "variations": [
+        "Donation - SRI SUBRAMANYA SWAMY SHANMUKHA"
+      ],
+      "id": "VIGRAHAM_SUBRAMANYA_SWAMY_SHANMUKHA"
+    },
+    "SHIVA_PARVATHI": {
+      "display_name": "Shiva Parvathi Vigraham",
+      "description": "Sponsorship for Shiva and Parvathi idols",
+      "variations": [
+        "Donation - SHIVA PARVATHI VIGRAHAM"
+      ],
+      "id": "VIGRAHAM_SHIVA_PARVATHI"
+    },
+    "LAKSHMINARASIMHA_SWAMY": {
+      "display_name": "Sri Lakshminarasimha Swamy Vigraham",
+      "description": "Sponsorship for Lakshminarasimha deity",
+      "variations": [
+        "Donation - SRI LAKSHMINARASIMHA SWAMY VIGRAHAM SPONSORSHIP"
+      ],
+      "id": "VIGRAHAM_LAKSHMINARASIMHA_SWAMY"
+    },
+    "YOGA_NARASIMHA_SWAMY": {
+      "display_name": "Yoga Narasimha Swamy Vigraham",
+      "description": "Sponsorship for Yoga Narasimha deity",
+      "variations": [
+        "Donation - YOGA NARASIMHA SWAMY VIGRAHAM SPONSORSHIP"
+      ],
+      "id": "VIGRAHAM_YOGA_NARASIMHA_SWAMY"
+    },
+    "VERAVENKATA_SATYANARAYANA_SWAMY": {
+      "display_name": "Veravenkata Satyanarayana Swamy Vigraham",
+      "description": "Sponsorship for Veravenkata Satyanarayana deity",
+      "variations": [
+        "Donation - VERAVENKATA SATYANARAYANA SWAMY SPONSORSHIP"
+      ],
+      "id": "VIGRAHAM_VERAVENKATA_SATYANARAYANA_SWAMY"
+    },
+    "NAVAGRAHAS": {
+      "display_name": "Navagrahas Vigrahas",
+      "description": "Sponsorship for nine planetary deities",
+      "variations": [
+        "Donation - Navagrahas Vigrahas"
+      ],
+      "id": "VIGRAHAM_NAVAGRAHAS"
+    },
+    "NARMADESHWARA_SHIVA_LINGAM": {
+      "display_name": "Narmadeshwara Shiva Lingam",
+      "description": "Sponsorship for Shiva Lingam idol",
+      "variations": [
+        "Donation - NARMADESHWARA SHIVA LINGAM SPONSORSHIP",
+        "Shivalingam"
+      ],
+      "id": "VIGRAHAM_NARMADESHWARA_SHIVA_LINGAM"
+    },
+    "AADI_SHANKARACHARYA": {
+      "display_name": "Aadi Shankaracharya Vigraham",
+      "description": "Sponsorship for Aadi Shankaracharya idol",
+      "variations": [
+        "Donation - AADI SHANKARACHARYA"
+      ],
+      "id": "VIGRAHAM_AADI_SHANKARACHARYA"
+    },
+    "SRI_DAKSHINAMURTHY": {
+      "display_name": "Sri Dakshinamurthy Vigraham",
+      "description": "Sponsorship for Dakshinamurthy idol",
+      "variations": [
+        "Donation - SRI DAKSHINAMURTHY"
+      ],
+      "id": "VIGRAHAM_SRI_DAKSHINAMURTHY"
+    },
+    "SRI_LAKSHMI_GANAPATHI": {
+      "display_name": "Sri Lakshmi Ganapathi Vigraham",
+      "description": "Sponsorship for Lakshmi Ganapathi idol",
+      "variations": [
+        "Donation - SRI LAKSHMI GANAPATHI"
+      ],
+      "id": "VIGRAHAM_SRI_LAKSHMI_GANAPATHI"
+    },
+    "SRI_SARASWATHI_MATHA": {
+      "display_name": "Sri Saraswathi Matha Vigraham",
+      "description": "Sponsorship for Saraswathi Matha idol",
+      "variations": [
+        "Donation - Sri Saraswathi matha"
+      ],
+      "id": "VIGRAHAM_SRI_SARASWATHI_MATHA"
+    },
+    "MURUGAR_DEITY_BALAALAYAM": {
+      "display_name": "Murugar Deity for Balaalayam",
+      "description": "Sponsorship for Lord Murugan idol for children's center",
+      "variations": [
+        "Donation - MURUGAR VIGRAHAM FOR BALAALAYAM"
+      ],
+      "id": "VIGRAHAM_MURUGAR_DEITY_BALAALAYAM"
+    },
+    "VIGRAHAM_GENERIC": {
+    "display_name": "Deity Vigraham (Unspecified)",
+    "description": "Sponsorship for deity idol installation (donor to specify)",
+    "variations": [
+      "Donation - VIGRAHAM",
+      "Donation - Vigharam",
+      "VIGRAHAM",
+      "Vigraham"
+    ],
+    "id": "VIGRAHAM_GENERIC"
+  }
+  },
+  "ALAYA_UPKARA": {
+    "SHADAGOPAM": {
+      "display_name": "Shadagopam/Shattari with Plate (Silver)",
+      "description": "Silver ceremonial vessel with plate",
+      "variations": [
+        "Donation - Shadagopam/Shattari with plate (silver)"
+      ],
+      "id": "ALAYA_UPKARA_SHADAGOPAM"
+    },
+    "THEERTHA_PATHRAM": {
+      "display_name": "Theertha Pathram and Udharani",
+      "description": "Sacred water vessel and ladle",
+      "variations": [
+        "Donation - Theertha Pathram and Udharani"
+      ],
+      "id": "ALAYA_UPKARA_THEERTHA_PATHRAM"
+    },
+    "THIRU_KAVERI": {
+      "display_name": "Thiru Kaveri",
+      "description": "Sacred water vessel for temple rituals",
+      "variations": [
+        "Donation - Thiru Kaveri"
+      ],
+      "id": "ALAYA_UPKARA_THIRU_KAVERI"
+    },
+    "TEMPLE_BELL": {
+      "display_name": "Temple Bell",
+      "description": "Sacred bell for worship ceremonies",
+      "variations": [
+        "Donation - Temple Bell",
+        "Temple Bell"
+      ],
+      "id": "ALAYA_UPKARA_TEMPLE_BELL"
+    },
+    "CEILING_TILE": {
+        "display_name": "Golden Ceiling Tile",
+        "description": "Ceiling tile donation for temple",
+        "variations": [
+          "Golden ceiling Tile",
+          "Ceiling Tile"
+        ],
+        "id": "ALAYA_UPKARA_CEILING_TILE"
+      },
+      "ABHISHEKA_VEDIKA": {
+      "display_name": "Abhisheka Vedika",
+      "description": "Ritual platform for abhishekam ceremonies",
+      "variations": [
+        "Donation - ABHISHEKA VEDIKA"
+      ],
+      "id": "ALAYA_UPKARA_ABHISHEKA_VEDIKA"
+    },
+    "DEEPAM": {
+      "display_name": "Deepam (Lamp)",
+      "description": "Sacred lamp for temple worship",
+      "variations": [
+        "Donation - DEEPAM (LAMP)"
+      ],
+      "id": "ALAYA_UPKARA_DEEPAM"
+    },
+    "VASTRAM": {
+      "display_name": "Vastram (Deity Clothing)",
+      "description": "Clothing for deity idols",
+      "variations": [
+        "Donation - VASTRAM DONATION",
+        "VASTRAM"
+      ],
+      "id": "ALAYA_UPKARA_VASTRAM"
+    },
+    "THIRU_MANGALAYAM": {
+      "display_name": "Thiru Mangalayam",
+      "description": "Sacred wedding thread for deities",
+      "variations": [
+        "Donation - THIRU MANGALAYAM"
+      ],
+      "id": "ALAYA_UPKARA_THIRU_MANGALAYAM"
+    },
+    "MAKARATHORANAM": {
+      "display_name": "Makarathoranam",
+      "description": "Decorative temple arch with auspicious design",
+      "variations": [
+        "Donation - MAKARATHORANAM",
+        "Makara"
+      ],
+      "id": "ALAYA_UPKARA_MAKARATHORANAM"
+    },
+    "SILVER_ORNAMENT": {
+      "display_name": "Silver Ornament",
+      "description": "Silver ceremonial ornament for deity",
+      "variations": [
+        "SILVER ORNAMENT"
+      ],
+      "id": "ALAYA_UPKARA_SILVER_ORNAMENT"
+    },
+        "MAHA_MANTAPAM": {
+      "display_name": "Maha Mantapam",
+      "description": "Donation for main temple hall infrastructure",
+      "variations": [
+        "MAHA MANTAPAM",
+        "Offering - MAHA MANTAPAM"
+      ],
+      "id": "GENERAL_DONATIONS_MAHA_MANTAPAM"
+    },
+    "TEMPLE_ITEMS_EQUIPMENT": {
+      "display_name": "Temple Equipment",
+      "description": "Functional equipment for temple operations",
+      "variations": [
+        "Donation - GAS STOVE",
+        "Donation - GAS STOVE INSTALLATION",
+        "Donation - WATER DISPENSER"
+      ],
+      "id": "ALAYA_UPKARA_TEMPLE_ITEMS_EQUIPMENT"
+    }
+  },
+  "POSHAKA_SEVA": {
+    "AALAYAPOSHAKA_SEVA": {
+      "display_name": "Aalayaposhaka Seva",
+      "description": "Temple maintenance and support seva",
+      "variations": [
+        "Aalayapooshaka Seva",
+        "Aalayaposhaka Seva",
+        "Aalayaposhakaseva"
+      ],
+      "id": "POSHAKA_SEVA_AALAYAPOSHAKA_SEVA"
+    },
+      "AALAYAPOSHAKA_YEARLY": {
+      "display_name": "Aalayaposhaka Yearly",
+      "description": "Temple maintenance and support seva",
+      "variations": [
+      "Aalayaposhaka Yearly"
+      ],
+      "id": "POSHAKA_SEVA_AALAYAPOSHAKA_YEARLY"
+    },
+    "MAHAPOSHAKA_SEVA": {
+      "display_name": "Mahaposhaka Seva",
+      "description": "Major temple patron seva",
+      "variations": [
+        "MAHAPOSHAKA SEVA",
+        "Pooja - MAHAPOSHAKA SEVA",
+        "Donation - MAHAPOSHAKA SEVA",
+        "Maha",
+        "Ma"
+      ],
+      "id": "POSHAKA_SEVA_MAHAPOSHAKA_SEVA"
+    },
+    "BRONZE_MAHAPOSHAKA_SEVA": {
+      "display_name": "Bronze Mahaposhaka Seva",
+      "description": "Bronze tier temple patron seva",
+      "variations": [
+        "Donation - BRONZE MAHAPOSHAKA SEVA"
+      ],
+      "id": "POSHAKA_SEVA_BRONZE_MAHAPOSHAKA_SEVA"
+    }
+  },
+  "BHOODANA": {
+    "BHOODAANA_SEVA": {
+      "display_name": "Bhoodaana Seva",
+      "description": "Contribution towards temple land and development",
+      "variations": [
+        "BHOODAANA SEVA",
+        "Bhoodaana Se",
+        "Bhoodaana Seva",
+        "Bhoodana",
+        "Donation - BHOODAANA SEVA",
+        "Event Donation - BHOODAANA SEVA"
+      ],
+      "id": "BHOODANA_BHOODAANA_SEVA"
+    },
+    "BHOODAANA_SEVA_BRONZE": {
+      "display_name": "Bhoodaana Seva - Bronze",
+      "description": "Bronze tier land donation seva",
+      "variations": [
+        "Donation - BHOODAANA SEVA BRONZE",
+        "Event Donation - BHOODAANA SEVA - Bronze"
+      ],
+      "id": "BHOODANA_BHOODAANA_SEVA_BRONZE"
+    },
+    "BHOODAANA_SEVA_SILVER": {
+      "display_name": "Bhoodaana Seva - Silver",
+      "description": "Silver tier land donation seva",
+      "variations": [
+        "Donation - BHOODAANA SEVA SILVER"
+      ],
+      "id": "BHOODANA_BHOODAANA_SEVA_SILVER"
+    }
+  },
+  "ANNADAANAM_NAIVEDYAM": {
+    "ANNADAANAM": {
+      "display_name": "Annadaanam (Food Offering)",
+      "description": "Donation and distribution of food to devotees",
+      "variations": [
+        "ANNADAANAM"
+      ],
+      "id": "SEVA_AND_NAIVEDYA_ANNADAANAM"
+    },
+    "BLESSED_PRASADAM": {
+      "display_name": "Blessed Prasadam",
+      "description": "Sacred food blessed by deity",
+      "variations": [
+        "Blessed Prasadam x1"
+      ],
+      "id": "ANNADAANAM_NAIVEDYAM"
+    }},
+    "FLOWER_SEVA": {
+      "FLOWER_SEVA": {
+      "display_name": "Flower Seva",
+      "description": "Offering of flowers for daily pooja",
+      "variations": [
+        "FLOWER SEVA",
+        "Flower Seva",
+        "Donation - FLOWER SEVA"
+      ],
+      "id": "FLOWER_SEVA"
+    }
+  },
+  "EVENTS": {
+    "PRATHISTAPANA": {
+      "display_name": "Prathistapana (Consecration)",
+      "description": "Donation for deity installation ceremonies",
+      "variations": [
+        "PRATHISTAPANA",
+        "Event Donation - PRATHISTAPANA",
+        "Event Donation - Prathistapana Mahotsavam",
+        "Event Donation - Ganapathi PRATHISTAPANA",
+        "Event Donation - BALAALAYAM PRATHISTAPANA MANDALAABHISHEKAM"
+      ],
+      "id": "EVENTS_PRATHISTAPANA"
+    },
+    "KANDA_SHASHTI": {
+      "display_name": "Kanda Shashti Festival",
+      "description": "Donation for Kanda Shashti celebrations",
+      "variations": [
+        "KANDA SHASHTI"
+      ],
+      "id": "EVENTS_KANDA_SHASHTI"
+    },
+    "SRI_VALLI_DEVA_SENAPATHE_EVENT": {
+      "display_name": "Sri Valli Deva Senapathe Event",
+      "description": "Special event donation for Lord Murugan festival",
+      "variations": [
+        "Event Donation - SRI VALLI DEVA SENAPATHE"
+      ],
+      "id": "EVENTS_SRI_VALLI_DEVA_SENAPATHE_EVENT"
+    },
+        "EVENT_SPONSORSHIP": {
+      "display_name": "Event Sponsorship",
+      "description": "General sponsorship for temple events",
+      "variations": [
+        "Donation - Event General Sponrship",
+        "Event General Sponsorship"
+      ],
+      "id": "GENERAL_DONATIONS_EVENT_SPONSORSHIP"
+    },
+    "LOWES_TENT": {
+  "display_name": "Event Tent Sponsorship",
+  "description": "Donations or fees related to event tent setup",
+  "variations": [
+    "LOWES TENT",
+    "TENT"
+  ],
+  "id": "EVENT_TENT"
+}
+  },
+  "PRIEST_SERVICES": {
+    "PRIEST_BOOKING": {
+      "display_name": "Priest Booking",
+      "description": "Book priest for home ceremonies",
+      "variations": [
+        "Priest Service",
+        "Priest service",
+        "Services"
+      ],
+      "id": "PRIEST_SERVICES_PRIEST_BOOKING"
+    },
+    "ASTROLOGY_CONSULTATION": {
+      "display_name": "Astrology Consultation",
+      "description": "Consultation with temple astrologer",
+      "variations": [
+        "Pooja - ASTROLOGY CONSULTATION"
+      ],
+      "id": "PRIEST_SERVICES_ASTROLOGY_CONSULTATION"
+    }
+  },
+  "GENERAL_DONATIONS": {
+    "GENERAL_DONATION": {
+      "display_name": "General Donation",
+      "description": "General contribution to temple operations",
+      "variations": [
+        "GENERAL DONATION",
+        "General Donation",
+        "Donation - GENERAL DONATION"
+      ],
+      "id": "GENERAL_DONATIONS_GENERAL_DONATION"
+    }},
+    "RENOVATION_FUND": {
+      "RENOVATION_FUND": {
+      "display_name": "Renovation Fund",
+      "description": "Contribution towards temple renovation",
+      "variations": [
+        "Donation - RENOVATION FUND",
+        "Event Donation - RENOVATION FUND"
+      ],
+      "id": "GENERAL_DONATIONS_RENOVATION_FUND"
+    }},  
+  "SPECIAL_PROGRAMS": {
+    "BALAALAYAM_DONATION": {
+      "display_name": "Balaalayam Donation",
+      "description": "Donation for children's religious education center",
+      "variations": [
+        "Donation - BALAALAYAM DONATION",
+        "Donation - DONATION FOR BALAALAYAM"
+      ],
+      "id": "SPECIAL_PROGRAMS_BALAALAYAM_DONATION"
+    },
+    "TEMPLE_LOAN": {
+      "display_name": "Temple Loan",
+      "description": "Interest-free loan service from temple",
+      "variations": [
+        "Loan - Temple Loan",
+        "Temple Loan"
+      ],
+      "id": "SPECIAL_PROGRAMS_TEMPLE_LOAN"
+    }
+  },
+    "STRIPE_Manual": {
+  "STRIPE_TERMINAL": {
+  "display_name": "In-Person Terminal Payment",
+  "description": "Transactions processed via Stripe physical terminal",
+  "variations": [
+    "STRIPE TERMINAL",
+    "STRIPE"
+  ],
+  "id": "GENERAL_STRIPE_TERMINAL"
+}},
+  "SYSTEM": {
+"TEST_DATA": {
+  "display_name": "Test Transactions",
+  "description": "System test entries and dummy data",
+  "variations": [
+    "Test",
+    "test"
+  ],
+  "id": "SYSTEM_TEST"
+}
+}}

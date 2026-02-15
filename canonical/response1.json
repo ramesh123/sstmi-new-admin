@@ -1,0 +1,1 @@
+{"statusCode": 200, "body": "{\"message\": \"Canonical mapping update complete\", \"records_processed\": 820, \"records_updated\": 820, \"records_skipped\": 0, \"force_update\": true, \"unknown_services_count\": 0, \"unknown_services\": []}"}

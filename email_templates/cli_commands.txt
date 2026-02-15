@@ -1,0 +1,14 @@
+aws ses update-template --cli-input-json file://annual_tax_template.json
+
+aws ses create-template --cli-input-json file://annual_tax_template.json
+
+ aws ses get-template --template-name TempleReceiptTemplate  --output json
+
+
+ aws ses create-template --cli-input-json file://announcement.json
+
+ aws ses update-template --cli-input-json file://announcement.json
+
+ aws ses update-template --cli-input-json file://TempleReceiptTemplate.json
+
+ aws ses get-template --template-name AnnualTaxDeductionTemplate  --output json

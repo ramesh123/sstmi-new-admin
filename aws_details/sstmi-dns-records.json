@@ -1,0 +1,260 @@
+{
+    "ResourceRecordSets": [
+        {
+            "Name": "sstmi.org.",
+            "Type": "A",
+            "AliasTarget": {
+                "HostedZoneId": "Z2FDTNDATAQYW2",
+                "DNSName": "d1e2k12l5svf9n.cloudfront.net.",
+                "EvaluateTargetHealth": false
+            }
+        },
+        {
+            "Name": "sstmi.org.",
+            "Type": "AAAA",
+            "AliasTarget": {
+                "HostedZoneId": "Z2FDTNDATAQYW2",
+                "DNSName": "d1e2k12l5svf9n.cloudfront.net.",
+                "EvaluateTargetHealth": false
+            }
+        },
+        {
+            "Name": "sstmi.org.",
+            "Type": "MX",
+            "TTL": 60,
+            "ResourceRecords": [
+                {
+                    "Value": "1 SMTP.GOOGLE.COM."
+                }
+            ]
+        },
+        {
+            "Name": "sstmi.org.",
+            "Type": "NS",
+            "TTL": 172800,
+            "ResourceRecords": [
+                {
+                    "Value": "ns-1956.awsdns-52.co.uk."
+                },
+                {
+                    "Value": "ns-590.awsdns-09.net."
+                },
+                {
+                    "Value": "ns-488.awsdns-61.com."
+                },
+                {
+                    "Value": "ns-1431.awsdns-50.org."
+                }
+            ]
+        },
+        {
+            "Name": "sstmi.org.",
+            "Type": "SOA",
+            "TTL": 900,
+            "ResourceRecords": [
+                {
+                    "Value": "ns-1956.awsdns-52.co.uk. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+                }
+            ]
+        },
+        {
+            "Name": "sstmi.org.",
+            "Type": "TXT",
+            "TTL": 300,
+            "ResourceRecords": [
+                {
+                    "Value": "\"google-site-verification=tsf4R1pKutxB5pvKau1s_3v5cOOg-Ous62XTh6GKi94\""
+                }
+            ]
+        },
+        {
+            "Name": "_1e7c29334f50bd2a0eeaeeaf3beef4c9.sstmi.org.",
+            "Type": "CNAME",
+            "TTL": 500,
+            "ResourceRecords": [
+                {
+                    "Value": "_93ac595bcfe749e8715d6be5e6741248.zfyfvmchrl.acm-validations.aws."
+                }
+            ]
+        },
+        {
+            "Name": "_be78dcd4fbda65bb0614605378d548a6.sstmi.org.",
+            "Type": "CNAME",
+            "TTL": 300,
+            "ResourceRecords": [
+                {
+                    "Value": "_cb654fa7f92f44d1d9558541a54ffe87.zfyfvmchrl.acm-validations.aws."
+                }
+            ]
+        },
+        {
+            "Name": "_dmarc.sstmi.org.",
+            "Type": "TXT",
+            "TTL": 300,
+            "ResourceRecords": [
+                {
+                    "Value": "\"v=DMARC1; p=none;\""
+                }
+            ]
+        },
+        {
+            "Name": "cvboqu7ypirsvsvl2tlkhg7zupjs2iow._domainkey.sstmi.org.",
+            "Type": "CNAME",
+            "TTL": 1800,
+            "ResourceRecords": [
+                {
+                    "Value": "cvboqu7ypirsvsvl2tlkhg7zupjs2iow.dkim.amazonses.com"
+                }
+            ]
+        },
+        {
+            "Name": "ijjuaybf2a7jxgtpe2ceokga4a33222e._domainkey.sstmi.org.",
+            "Type": "CNAME",
+            "TTL": 1800,
+            "ResourceRecords": [
+                {
+                    "Value": "ijjuaybf2a7jxgtpe2ceokga4a33222e.dkim.amazonses.com"
+                }
+            ]
+        },
+        {
+            "Name": "mzlzg2vws6b4gtu6wm5x5hgbw3ypjlbh._domainkey.sstmi.org.",
+            "Type": "CNAME",
+            "TTL": 1800,
+            "ResourceRecords": [
+                {
+                    "Value": "mzlzg2vws6b4gtu6wm5x5hgbw3ypjlbh.dkim.amazonses.com"
+                }
+            ]
+        },
+        {
+            "Name": "admin.sstmi.org.",
+            "Type": "A",
+            "AliasTarget": {
+                "HostedZoneId": "Z2FDTNDATAQYW2",
+                "DNSName": "d2ahdjdas9qpfb.cloudfront.net.",
+                "EvaluateTargetHealth": false
+            }
+        },
+        {
+            "Name": "admin.sstmi.org.",
+            "Type": "MX",
+            "TTL": 300,
+            "ResourceRecords": [
+                {
+                    "Value": "10 inbound-smtp.us-east-1.amazonaws.com"
+                }
+            ]
+        },
+        {
+            "Name": "admin.sstmi.org.",
+            "Type": "TXT",
+            "TTL": 300,
+            "ResourceRecords": [
+                {
+                    "Value": "\"v=spf1 include:amazonses.com -all\""
+                }
+            ]
+        },
+        {
+            "Name": "_0076cc87ced01619febb892aa34fdb12.admin.sstmi.org.",
+            "Type": "CNAME",
+            "TTL": 300,
+            "ResourceRecords": [
+                {
+                    "Value": "_d792f1aa1cba5cc2f149ac1839a23946.zfyfvmchrl.acm-validations.aws."
+                }
+            ]
+        },
+        {
+            "Name": "_953c6a80809050e745249463a6ec85e9.admin.sstmi.org.",
+            "Type": "CNAME",
+            "TTL": 500,
+            "ResourceRecords": [
+                {
+                    "Value": "_f037a8787a2c222be80221e57a0fa480.zfyfvmchrl.acm-validations.aws."
+                }
+            ]
+        },
+        {
+            "Name": "_dmarc.admin.sstmi.org.",
+            "Type": "TXT",
+            "TTL": 300,
+            "ResourceRecords": [
+                {
+                    "Value": "\"v=DMARC1; p=quarantine; rua=mailto:postmaster@sstmi.org; ruf=mailto:postmaster@sstmi.org; sp=none; aspf=r;\""
+                }
+            ]
+        },
+        {
+            "Name": "3yiq52t6azlag5uxva76jlub2pvtvat5._domainkey.admin.sstmi.org.",
+            "Type": "CNAME",
+            "TTL": 1800,
+            "ResourceRecords": [
+                {
+                    "Value": "3yiq52t6azlag5uxva76jlub2pvtvat5.dkim.amazonses.com"
+                }
+            ]
+        },
+        {
+            "Name": "iq7x3jwz5iyhdp457e6xyi2ebwagoglq._domainkey.admin.sstmi.org.",
+            "Type": "CNAME",
+            "TTL": 1800,
+            "ResourceRecords": [
+                {
+                    "Value": "iq7x3jwz5iyhdp457e6xyi2ebwagoglq.dkim.amazonses.com"
+                }
+            ]
+        },
+        {
+            "Name": "x5o7ms6ob2w2u7sd3kdvlwhbynigmu5q._domainkey.admin.sstmi.org.",
+            "Type": "CNAME",
+            "TTL": 1800,
+            "ResourceRecords": [
+                {
+                    "Value": "x5o7ms6ob2w2u7sd3kdvlwhbynigmu5q.dkim.amazonses.com"
+                }
+            ]
+        },
+        {
+            "Name": "_7a828443e7f63b5137735957666b8e2b.auth.sstmi.org.",
+            "Type": "CNAME",
+            "TTL": 300,
+            "ResourceRecords": [
+                {
+                    "Value": "_fb0dbea1e265b0e09e6bbd26a7344f7b.zfyfvmchrl.acm-validations.aws."
+                }
+            ]
+        },
+        {
+            "Name": "donations\\100.sstmi.org.",
+            "Type": "TXT",
+            "TTL": 300,
+            "ResourceRecords": [
+                {
+                    "Value": "\"v=spf1 include:amazonses.com ~all\""
+                }
+            ]
+        },
+        {
+            "Name": "www.sstmi.org.",
+            "Type": "CNAME",
+            "TTL": 300,
+            "ResourceRecords": [
+                {
+                    "Value": "d1e2k12l5svf9n.cloudfront.net"
+                }
+            ]
+        },
+        {
+            "Name": "_be8b540a54ba4af1d8cc3f8f1ee41509.www.sstmi.org.",
+            "Type": "CNAME",
+            "TTL": 300,
+            "ResourceRecords": [
+                {
+                    "Value": "_73c2b72fed2d4d594b87914696308fbf.zfyfvmchrl.acm-validations.aws."
+                }
+            ]
+        }
+    ]
+}
