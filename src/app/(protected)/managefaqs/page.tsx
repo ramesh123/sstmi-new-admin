@@ -1,6 +1,27 @@
 "use client";
 import { useEffect, useState } from "react";
 
+// Helper function to make authenticated API calls
+const makeAuthenticatedRequest = async (url: string, options: RequestInit = {}) => {
+  const response = await fetch(url, {
+    ...options,
+    // This tells the browser to send your existing id_token cookie automatically
+    credentials: 'include', 
+    headers: {
+      'Content-Type': 'application/json',
+      ...options.headers,
+    },
+  });
+
+  if (response.status === 401) {
+    // If we get a 401, the cookie might have expired
+    window.location.href = '/login'; // Or your hosted UI link
+    throw new Error('Session expired. Redirecting to login...');
+  }
+
+  return response;
+};
+
 interface FAQ {
   question: string;
   answer: string;
@@ -233,45 +254,33 @@ const FAQManager = () => {
   const loadFaqsFromStorage = async () => {
     setIsLoading(true);
     try {
-      const response = await fetch('https://ztu45fmv11.execute-api.us-east-1.amazonaws.com/prod/faqs', {
-        method: 'POST',
-        headers: { 
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          httpMethod: 'GET'
-        })
-      });
+      const response = await makeAuthenticatedRequest(
+        '/admin/faqs',  // CloudFront path - update this to match your API Gateway route
+        {
+          method: 'POST',
+          body: JSON.stringify({
+            httpMethod: 'GET'
+          })
+        }
+      );
+      
       if (!response.ok) {
-        throw new Error('Failed to fetch faqs');
+        throw new Error('Failed to fetch FAQs');
       }
+      
       const result = await response.json();
       const data = JSON.parse(result.body);
       setFaqs(data);
     } catch (err) {
-      setToast({ message: 'Failed to load faqs data. Please refresh the page.', type: 'error' });
+      setToast({ 
+        message: err instanceof Error ? err.message : 'Failed to load FAQs data. Please refresh the page.', 
+        type: 'error' 
+      });
       console.error(err);
     } finally {
       setIsLoading(false);
     }
   };
-
-  const saveFaqsToStorage = async (faqs: any[]) => {
-  try {
-    const response = await fetch('http://sstmi-website.s3.us-east-1.amazonaws.com/assets/faq.json', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(faqs),
-    });
-
-    if (!response.ok) throw new Error('Failed to save FAQs');
-
-    setToast({ message: 'FAQs saved successfully!', type: 'success' });
-  } catch (err) {
-    console.error(err);
-    setToast({ message: 'Failed to save FAQs.', type: 'error' });
-  }
-};
 
   const sortData = (data: FAQ[]): FAQ[] => {
     if (!sortConfig.key) return data;
@@ -329,28 +338,35 @@ const FAQManager = () => {
   const handleSave = async (faq: FAQ) => {
     setIsLoading(true);
     try {
-     let jsonObj = {question:faq?.question,answer:faq?.answer};
-      const response = await fetch('https://ztu45fmv11.execute-api.us-east-1.amazonaws.com/prod/faqs', {
-        method: 'POST',
-        headers: { 
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          httpMethod: 'POST',
-          body:JSON.stringify(jsonObj)
-        })
-      });
+      const jsonObj = { question: faq?.question, answer: faq?.answer };
+      
+      const response = await makeAuthenticatedRequest(
+        '/admin/faqs',  // CloudFront path - update this to match your API Gateway route
+        {
+          method: 'POST',
+          body: JSON.stringify({
+            httpMethod: 'POST',
+            body: JSON.stringify(jsonObj)
+          })
+        }
+      );
+      
       if (!response.ok) {
-        throw new Error('Failed to post faqs');
+        throw new Error('Failed to save FAQ');
       }
+      
       const result = await response.json();
-      if(result?.body){
-        loadFaqsFromStorage();
+      if (result?.body) {
+        setToast({ message: 'FAQ saved successfully!', type: 'success' });
+        await loadFaqsFromStorage();
         setIsModalOpen(false);
       }
     } catch (err) {
-      //setToast({ message: 'Failed to load faqs data. Please refresh the page.', type: 'error' });
-      //console.error(err);
+      setToast({ 
+        message: err instanceof Error ? err.message : 'Failed to save FAQ. Please try again.', 
+        type: 'error' 
+      });
+      console.error(err);
     } finally {
       setIsLoading(false);
     }
@@ -360,29 +376,38 @@ const FAQManager = () => {
     const updatedFaqs = faqs.filter(f => f.question !== faq?.question);
     setFaqs(updatedFaqs);
     setIsLoading(true);
+    
     try {
-     let jsonObj = {question:faq?.question,answer:faq?.answer};
-      const response = await fetch('https://ztu45fmv11.execute-api.us-east-1.amazonaws.com/prod/faqs', {
-        method: 'POST',
-        headers: { 
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          httpMethod: 'DELETE',
-          body:JSON.stringify(jsonObj)
-        })
-      });
+      const jsonObj = { question: faq?.question, answer: faq?.answer };
+      
+      const response = await makeAuthenticatedRequest(
+        '/admin/faqs',  // CloudFront path - update this to match your API Gateway route
+        {
+          method: 'POST',
+          body: JSON.stringify({
+            httpMethod: 'DELETE',
+            body: JSON.stringify(jsonObj)
+          })
+        }
+      );
+      
       if (!response.ok) {
-        throw new Error('Failed to post faqs');
+        throw new Error('Failed to delete FAQ');
       }
+      
       const result = await response.json();
-      if(result?.body){
+      if (result?.body) {
         setToast({ message: 'FAQ deleted successfully!', type: 'success' });
         setDeleteConfirm(null);
       }
     } catch (err) {
-      //setToast({ message: 'Failed to load faqs data. Please refresh the page.', type: 'error' });
-      //console.error(err);
+      setToast({ 
+        message: err instanceof Error ? err.message : 'Failed to delete FAQ. Please try again.', 
+        type: 'error' 
+      });
+      console.error(err);
+      // Restore the FAQ if delete failed
+      setFaqs(faqs);
     } finally {
       setIsLoading(false);
     }    
@@ -478,7 +503,7 @@ const FAQManager = () => {
                       </td>
                     </tr>
                   ) : paginatedData.length > 0 ? (
-                    paginatedData.map((row: FAQ,index) => (
+                    paginatedData.map((row: FAQ, index) => (
                       <tr key={index} className="hover:bg-blue-50 transition">
                         <td className="px-6 py-4 text-sm font-medium text-gray-900">
                           {row.question}
