@@ -3,26 +3,6 @@ import { useEffect, useState, useRef } from "react";
 import dynamic from 'next/dynamic';
 import 'react-quill-new/dist/quill.snow.css';
 
-// Helper function to make authenticated API calls
-const makeAuthenticatedRequest = async (url: string, options: RequestInit = {}) => {
-  const response = await fetch(url, {
-    ...options,
-    // This tells the browser to send your existing id_token cookie automatically
-    credentials: 'include', 
-    headers: {
-      'Content-Type': 'application/json',
-      ...options.headers,
-    },
-  });
-
-  if (response.status === 401) {
-    // If we get a 401, the cookie might have expired
-    window.location.href = '/login'; // Or your hosted UI link
-    throw new Error('Session expired. Redirecting to login...');
-  }
-
-  return response;
-};
 
 // Proper suppression of findDOMNode warning for React Quill
 const originalError = console.error;
@@ -322,14 +302,14 @@ const EmailSender: React.FC = () => {
         body_text: stripHtmlTags(emailFormData.body), 
         body_html: emailFormData.body 
       };
-     
-      const response = await makeAuthenticatedRequest(
-        "https://u2b0w593t4.execute-api.us-east-1.amazonaws.com/Prod/send-email",  // CloudFront path - update this to match your API Gateway route
-        {
-          method: "POST",
-          body: JSON.stringify(jsonObj)
-        }
-      );
+      
+      const response = await fetch("https://u2b0w593t4.execute-api.us-east-1.amazonaws.com/Prod/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(jsonObj)
+      });
       
       const data = await response.json();
       
