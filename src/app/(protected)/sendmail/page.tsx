@@ -322,10 +322,9 @@ const EmailSender: React.FC = () => {
         body_text: stripHtmlTags(emailFormData.body), 
         body_html: emailFormData.body 
       };
-      console.log("jsonObj", jsonObj);
-      
+     
       const response = await makeAuthenticatedRequest(
-        "/admin/send-email",  // CloudFront path - update this to match your API Gateway route
+        "https://u2b0w593t4.execute-api.us-east-1.amazonaws.com/Prod/send-email",  // CloudFront path - update this to match your API Gateway route
         {
           method: "POST",
           body: JSON.stringify(jsonObj)
@@ -333,7 +332,6 @@ const EmailSender: React.FC = () => {
       );
       
       const data = await response.json();
-      console.log("data", data);
       
       if (response.ok && (data?.statusCode === 200 || data?.message?.includes('success'))) {
         setToast({ message: 'Email sent successfully!', type: 'success' });

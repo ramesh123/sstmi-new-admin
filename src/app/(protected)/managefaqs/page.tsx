@@ -255,7 +255,7 @@ const FAQManager = () => {
     setIsLoading(true);
     try {
       const response = await makeAuthenticatedRequest(
-        '/admin/faqs',  // CloudFront path - update this to match your API Gateway route
+        'https://ztu45fmv11.execute-api.us-east-1.amazonaws.com/prod/faqs',  // CloudFront path - update this to match your API Gateway route
         {
           method: 'POST',
           body: JSON.stringify({
@@ -341,7 +341,7 @@ const FAQManager = () => {
       const jsonObj = { question: faq?.question, answer: faq?.answer };
       
       const response = await makeAuthenticatedRequest(
-        '/admin/faqs',  // CloudFront path - update this to match your API Gateway route
+        'https://ztu45fmv11.execute-api.us-east-1.amazonaws.com/prod/faqs',  // CloudFront path - update this to match your API Gateway route
         {
           method: 'POST',
           body: JSON.stringify({
@@ -381,7 +381,7 @@ const FAQManager = () => {
       const jsonObj = { question: faq?.question, answer: faq?.answer };
       
       const response = await makeAuthenticatedRequest(
-        '/admin/faqs',  // CloudFront path - update this to match your API Gateway route
+        'https://ztu45fmv11.execute-api.us-east-1.amazonaws.com/prod/faqs',  // CloudFront path - update this to match your API Gateway route
         {
           method: 'POST',
           body: JSON.stringify({
