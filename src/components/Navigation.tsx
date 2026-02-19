@@ -3,105 +3,56 @@
 import { useEffect, useState } from 'react';
 import { useRouter, usePathname } from 'next/navigation';
 
+const ADMIN_EMAILS = ['kumarkoppireddy@gmail.com', 'hvgpaani@gmail.com', 'vikram846@gmail.com'];
+
+const ADMIN_LINKS = [
+  { path: '/admin', label: 'Manage Admin' },
+  { path: '/dashboard', label: 'Services Dashboard' },
+  { path: '/priest', label: 'Priest Dashboard' },
+  { path: '/volunteer', label: 'Volunteer Dashboard' },
+  { path: '/manageusers', label: 'Manage Users' },
+  { path: '/managefaqs', label: "Manage FAQ's" },
+  { path: '/sendmail', label: 'Send Mail' },
+];
+
+const OTHER_LINKS = [
+  { path: '/volunteer', label: 'Volunteer Dashboard' },
+];
+
 export default function Navigation() {
-  const [roleCond, setRoleCond] = useState(1);
+  const [isAdmin, setIsAdmin] = useState(false);
   const router = useRouter();
   const pathname = usePathname();
 
-  const navigateTo = (path: string) => {
-    router.push(path);
-  };
-
-  const getButtonClass = (path: string) => {
-    return pathname === path
-      ? "w-full text-left px-4 py-3 bg-blue-600 text-white font-semibold rounded-lg transition-colors"
-      : "w-full text-left px-4 py-3 text-gray-700 hover:bg-gray-200 rounded-lg transition-colors";
-  };
-
   useEffect(() => {
-    const storedUser = sessionStorage.getItem('adminuser');
-    if (storedUser) {
-      const user = JSON.parse(storedUser);
-      setRoleCond(user.roleid);
-    }
+    const email = document.cookie
+      .split('; ')
+      .find((row) => row.startsWith('email='))
+      ?.split('=')[1];
+
+    setIsAdmin(!!email && ADMIN_EMAILS.includes(decodeURIComponent(email)));
   }, []);
+
+  const getButtonClass = (path: string) =>
+    `w-full text-left px-4 py-3 rounded-lg font-semibold transition-colors ${
+      pathname === path
+        ? 'bg-blue-600 text-white'
+        : 'text-gray-700 hover:bg-gray-200'
+    }`;
+
+  const links = isAdmin ? ADMIN_LINKS : OTHER_LINKS;
 
   return (
     <nav className="w-64 bg-white shadow-lg min-h-screen p-6">
-      <div className="mb-8">
-        <h2 className="text-2xl font-bold text-gray-800">Admin Panel</h2>
-      </div>
+      <h2 className="text-2xl font-bold text-gray-800 mb-8">Admin Panel</h2>
       <ul className="space-y-2">
-        {(roleCond === 1 || roleCond === 2) && (
-          <li>
-            <button
-              onClick={() => navigateTo('/admin')}
-              className={getButtonClass('/admin')}
-            >
-              Manage Admin
+        {links.map(({ path, label }) => (
+          <li key={path}>
+            <button onClick={() => router.push(path)} className={getButtonClass(path)}>
+              {label}
             </button>
           </li>
-        )}
-        {(roleCond === 1 || roleCond === 2) && (
-          <li>
-            <button
-              onClick={() => navigateTo('/dashboard')}
-              className={getButtonClass('/dashboard')}
-            >
-              Services Dashboard
-            </button>
-          </li>
-        )}
-        {(roleCond === 1 || roleCond === 2) && (
-          <li>
-            <button
-              onClick={() => navigateTo('/priest')}
-              className={getButtonClass('/priest')}
-            >
-              Priest Dashboard
-            </button>
-          </li>
-        )}
-        {(roleCond === 1 || roleCond === 2 || roleCond === 3) && (
-          <li>
-            <button
-              onClick={() => navigateTo('/volunteer')}
-              className={getButtonClass('/volunteer')}
-            >
-              Volunteer Dashboard
-            </button>
-          </li>
-        )}
-        {roleCond === 1 && (
-          <li>
-            <button
-              onClick={() => navigateTo('/manageusers')}
-              className={getButtonClass('/manageusers')}
-            >
-              Manage Users
-            </button>
-          </li>
-        )}
-        {(roleCond === 1 || roleCond === 2) && (
-          <li>
-            <button
-              onClick={() => navigateTo('/managefaqs')}
-              className={getButtonClass('/managefaqs')}
-            >
-              Manage FAQ's
-            </button>
-          </li>
-        )}
-        {(roleCond === 1 || roleCond === 2) && (
-          <li>
-            <button
-              onClick={() => navigateTo('/sendmail')}
-              className={getButtonClass('/sendmail')}
-            >
-              Send Mail
-            </button>
-          </li>
-        )}
+        ))}
       </ul>
     </nav>
   );
