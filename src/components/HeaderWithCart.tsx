@@ -52,8 +52,8 @@ export default function OptimizedHeader() {
                 onClick={() => setIsNavOpen(!isNavOpen)}
                 className="p-2 hover:bg-gray-700 rounded-lg transition text-amber-300"
                 aria-label="Menu"
-              >
-                {isNavOpen ? <X size={28} /> : <Menu size={28} />}
+              ><Menu size={28} />
+                {/* {isNavOpen ? <X size={28} /> : <Menu size={28} />} */}
               </button>
             )}
             
@@ -71,7 +71,7 @@ export default function OptimizedHeader() {
 
           {/* Right Side: Cart & Logout */}
           <div className="flex items-center space-x-2 md:space-x-6">
-            <button
+            {/* <button
               onClick={() => setIsCartOpen(true)}
               className="relative p-2 text-amber-300 hover:bg-gray-700 rounded-lg transition"
             >
@@ -81,7 +81,7 @@ export default function OptimizedHeader() {
                   {cartCount}
                 </span>
               )}
-            </button>
+            </button> */}
 
             {!isLoginPage && (
               <>
@@ -105,7 +105,7 @@ export default function OptimizedHeader() {
         </div>
 
         {/* Dropdown Navigation Menu (The "Burger" Menu) */}
-        {!isLoginPage && isNavOpen && (
+        {/* {!isLoginPage && isNavOpen && (
           <div className="absolute top-full left-0 w-full bg-gray-800 border-t border-gray-700 shadow-xl animate-in fade-in slide-in-from-top-2">
             <nav className="max-w-7xl mx-auto p-4">
               <ul className="flex flex-col space-y-2">
@@ -126,10 +126,10 @@ export default function OptimizedHeader() {
               </ul>
             </nav>
           </div>
-        )}
+        )} */}
       </header>
 
-      <Cart isOpen={isCartOpen} onClose={() => setIsCartOpen(false)} />
+      {/* <Cart isOpen={isCartOpen} onClose={() => setIsCartOpen(false)} /> */}
     </>
   );
 }

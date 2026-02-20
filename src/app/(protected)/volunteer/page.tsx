@@ -20,7 +20,7 @@ export default function VolunteerPage() {
 
   const tabs = [
     { key: 'generateReceipt', label: 'Generate Receipt' },
-    { key: 'reports', label: 'Reports' },
+    // { key: 'reports', label: 'Reports' },
     // Add more tabs here
   ];
 
@@ -28,8 +28,8 @@ export default function VolunteerPage() {
     switch (activeTab) {
       case 'generateReceipt':
         return <GenerateReceiptForm userName={userEmail || ''} />;
-      case 'reports':
-        return <div>Reports Content</div>;
+      // case 'reports':
+      //   return <div>Reports Content</div>;
       // Add more cases for other tabs
       default:
         return null;
