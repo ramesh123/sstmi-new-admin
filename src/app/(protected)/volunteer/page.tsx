@@ -19,7 +19,7 @@ export default function VolunteerPage() {
   }, []);
 
   const tabs = [
-    { key: 'generateReceipt', label: 'Generate Receipt' },
+    { key: 'generateReceipt', label: 'Generate Receipt' }
     // { key: 'reports', label: 'Reports' },
     // Add more tabs here
   ];
@@ -40,7 +40,7 @@ export default function VolunteerPage() {
     // <div className="bg-white rounded-lg shadow p-6">
     <div className="bg-gray-50 min-h-screen p-8">
       <h1 className="text-2xl font-bold mb-4">Volunteer Dashboard</h1>
-      <nav className="flex space-x-4 mb-4">
+      {/* <nav className="flex space-x-4 mb-4">
         {tabs.map((tab) => (
           <button
             key={tab.key}
@@ -50,7 +50,7 @@ export default function VolunteerPage() {
             {tab.label}
           </button>
         ))}
-      </nav>
+      </nav> */}
       <div>{getTabContent()}</div>
     </div>
   );
