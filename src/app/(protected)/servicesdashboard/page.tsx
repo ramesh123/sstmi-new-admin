@@ -116,22 +116,7 @@ const ServiceModal = ({ service, onClose, onSave, isEdit }: {
     return (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
             <div className="bg-white rounded-lg shadow-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
-                <div className="px-6 py-4 border-b border-gray-200 bg-gradient-to-r from-blue-50 to-indigo-50">
-                    <div className="flex items-center justify-between">
-                        <h3 className="text-xl font-semibold text-gray-800">
-                            {isEdit ? 'Edit Service' : 'Add New Service'}
-                        </h3>
-                        <button
-                            onClick={onClose}
-                            className="text-gray-400 hover:text-gray-600 transition"
-                        >
-                            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                            </svg>
-                        </button>
-                    </div>
-                </div>
-
+                
                 <div className="px-6 py-4">
                     <div className="space-y-4">
                         <div>
@@ -204,43 +189,7 @@ const ServiceModal = ({ service, onClose, onSave, isEdit }: {
                         >
                             Cancel
                         </button>
-                        <button
-                            type="button"
-                            onClick={handleSubmit}
-                            className="flex-1 px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition"
-                        >
-                            {isEdit ? 'Update Service' : 'Add Service'}
-                        </button>
                     </div>
-                </div>
-            </div>
-        </div>
-    );
-};
-
-const DeleteConfirmModal = ({ onClose, onConfirm }: { onClose: () => void; onConfirm: () => void }) => {
-    return (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-            <div className="bg-white rounded-lg shadow-xl max-w-md w-full">
-                <div className="px-6 py-4 border-b border-gray-200">
-                    <h3 className="text-xl font-semibold text-gray-800">Confirm Delete</h3>
-                </div>
-                <div className="px-6 py-4">
-                    <p className="text-gray-600">Are you sure you want to delete this service?</p>
-                </div>
-                <div className="px-6 py-4 border-t border-gray-200 flex gap-3">
-                    <button
-                        onClick={onClose}
-                        className="flex-1 px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 transition"
-                    >
-                        Cancel
-                    </button>
-                    <button
-                        onClick={onConfirm}
-                        className="flex-1 px-4 py-2 text-sm font-medium text-white bg-red-600 rounded-lg hover:bg-red-700 transition"
-                    >
-                        Delete
-                    </button>
                 </div>
             </div>
         </div>
@@ -361,73 +310,6 @@ const ServicesManager = () => {
         setIsModalOpen(true);
     };
 
-    const handleSave = async (service: Service) => {
-        setIsLoading(true);
-        try {
-            const payload = {
-                action: isEdit ? 'edit' : 'add',
-                data: {
-                    name: service.name,
-                    price: service.price,
-                    group: service.group,
-                    image: service.image,
-                }
-            };
-
-            const response = await fetch('https://esalzmioqk.execute-api.us-east-1.amazonaws.com/Prod/services', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(payload)
-            });
-            const responseData = await response.text();
-
-            if (!response.ok) {
-                throw new Error(`Failed to save service: ${response.status} - ${responseData}`);
-            }
-
-            await loadServices();
-            setIsModalOpen(false);
-            setToast({ message: `Service ${isEdit ? 'updated' : 'added'} successfully!`, type: 'success' });
-        } catch (err) {
-            setToast({ message: `Failed to save service`, type: 'error' });
-        } finally {
-            setIsLoading(false);
-        }
-    };
-
-    const handleDelete = async (service: Service) => {
-        setIsLoading(true);
-        try {
-            const payload = {
-                action: 'delete',
-                data: { name: service.name }
-            };
-
-            const response = await fetch('https://esalzmioqk.execute-api.us-east-1.amazonaws.com/Prod/services', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(payload)
-            });
-
-            if (!response.ok) {
-                throw new Error('Failed to delete service');
-            }
-
-            await loadServices();
-            setDeleteConfirm(null);
-            setToast({ message: 'Service deleted successfully!', type: 'success' });
-        } catch (err) {
-            console.error(err);
-            setToast({ message: 'Failed to delete service', type: 'error' });
-        } finally {
-            setIsLoading(false);
-        }
-    };
-
     return (
         <>
             {toast && (
@@ -438,39 +320,10 @@ const ServicesManager = () => {
                 />
             )}
 
-            {isModalOpen && (
-                <ServiceModal
-                    service={selectedService}
-                    onClose={() => setIsModalOpen(false)}
-                    onSave={handleSave}
-                    isEdit={isEdit}
-                />
-            )}
-
-            {deleteConfirm && (
-                <DeleteConfirmModal
-                    onClose={() => setDeleteConfirm(null)}
-                    onConfirm={() => handleDelete(deleteConfirm)}
-                />
-            )}
-
             <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100">
                 <div className="max-w-7xl mx-auto">
                     <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-                        <div className="px-6 py-4 border-b border-gray-200 bg-gradient-to-r from-blue-50 to-indigo-50 flex items-center justify-between">
-                            <h2 className="text-2xl font-bold text-gray-800">Manage Services</h2>
-                            <div className="flex gap-2">
-                                <button
-                                    onClick={handleAddNew}
-                                    className="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition flex items-center gap-2"
-                                >
-                                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
-                                    </svg>
-                                    Add New Service
-                                </button>
-                            </div>
-                        </div>
+                       
 
                         <div className="px-6 py-4 bg-gray-50">
                             <input
@@ -563,25 +416,6 @@ const ServicesManager = () => {
                                                         >
                                                             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
-                                                            </svg>
-                                                        </button>
-
-                                                        <button
-                                                            onClick={() => handleEdit(row)}
-                                                            className="p-2 text-blue-600 hover:bg-blue-100 rounded-lg transition"
-                                                            title="Edit"
-                                                        >
-                                                            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
-                                                            </svg>
-                                                        </button>
-                                                        <button
-                                                            onClick={() => setDeleteConfirm(row)}
-                                                            className="p-2 text-red-600 hover:bg-red-100 rounded-lg transition"
-                                                            title="Delete"
-                                                        >
-                                                            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
                                                             </svg>
                                                         </button>
                                                     </div>

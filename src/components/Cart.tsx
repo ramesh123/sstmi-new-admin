@@ -69,7 +69,7 @@ const Cart = ({ isOpen, onClose }: CartProps) => {
                     </SheetHeader>
                     <div className="mt-8">
                         <CheckoutForm
-                           // devotee={selectedDevotee}
+                            // devotee={selectedDevotee}
                             onClose={() => {
                                 handleCloseCheckout();
                                 onClose();
@@ -90,21 +90,6 @@ const Cart = ({ isOpen, onClose }: CartProps) => {
                     </SheetTitle>
                 </SheetHeader>
 
-                {/*<div className="mt-4 mb-6">*/}
-                {/*    <DevoteeTypeahead*/}
-                {/*        onSelect={handleDevoteeSelect}*/}
-                {/*        onNewName={handleNewDevotee}*/}
-                {/*    />*/}
-                {/*    {selectedDevotee && (*/}
-                {/*        <div className="mt-2 text-sm text-amber-700">*/}
-                {/*            <div><span className="font-semibold">Name:</span> {selectedDevotee.Name}</div>*/}
-                {/*            {selectedDevotee.Email && (*/}
-                {/*                <div><span className="font-semibold">Email:</span> {selectedDevotee.Email}</div>*/}
-                {/*            )}*/}
-                {/*        </div>*/}
-                {/*    )}*/}
-                {/*</div>*/}
-
                 <div className="flex-1 flex flex-col">
                     {items.length === 0 ? (
                         <div className="flex-1 flex items-center justify-center">
@@ -116,51 +101,53 @@ const Cart = ({ isOpen, onClose }: CartProps) => {
                         </div>
                     ) : (
                         <>
-                            <div className="flex-1 overflow-y-auto space-y-4">
-                                {items.map((item) => (
-                                    <div key={item.id} className="bg-white rounded-lg p-4 shadow-md border border-amber-200">
-                                        <div className="flex justify-between items-start mb-3">
-                                            <div className="flex-1">
-                                                <h3 className="font-semibold text-amber-800">{item.name}</h3>
-                                                <p className="text-sm text-gray-600 mt-1">{item.description}</p>
-                                                <p className="text-lg font-bold text-orange-600 mt-2">${item.price}</p>
+                            <div className="flex-1 flex flex-col min-h-0 overflow-hidden">
+                                <div className="flex-1 overflow-y-auto space-y-3 pr-1">
+                                    {items.map((item) => (
+                                        <div key={item.id} className="bg-white rounded-lg p-4 shadow-md border border-amber-200">
+                                            <div className="flex justify-between items-start mb-3">
+                                                <div className="flex-1">
+                                                    <h3 className="font-semibold text-amber-800">{item.name}</h3>
+                                                    {/* <p className="text-sm text-gray-600 mt-1">{item.description}</p> */}
+                                                    <p className="text-lg font-bold text-orange-600 mt-2">${item.price}</p>
+                                                </div>
+                                                <Button
+                                                    variant="ghost"
+                                                    size="sm"
+                                                    onClick={() => removeFromCart(item.id)}
+                                                    className="text-red-500 hover:text-red-700 hover:bg-red-50"
+                                                >
+                                                    <Trash2 className="w-4 h-4" />
+                                                </Button>
                                             </div>
-                                            <Button
-                                                variant="ghost"
-                                                size="sm"
-                                                onClick={() => removeFromCart(item.id)}
-                                                className="text-red-500 hover:text-red-700 hover:bg-red-50"
-                                            >
-                                                <Trash2 className="w-4 h-4" />
-                                            </Button>
-                                        </div>
 
-                                        <div className="flex items-center justify-between">
-                                            <div className="flex items-center space-x-3">
-                                                <Button
-                                                    variant="outline"
-                                                    size="sm"
-                                                    onClick={() => updateQuantity(item.id, item.quantity - 1)}
-                                                    className="w-8 h-8 p-0 border-amber-300"
-                                                >
-                                                    <Minus className="w-4 h-4" />
-                                                </Button>
-                                                <span className="font-semibold min-w-[2rem] text-center">{item.quantity}</span>
-                                                <Button
-                                                    variant="outline"
-                                                    size="sm"
-                                                    onClick={() => updateQuantity(item.id, item.quantity + 1)}
-                                                    className="w-8 h-8 p-0 border-amber-300"
-                                                >
-                                                    <Plus className="w-4 h-4" />
-                                                </Button>
-                                            </div>
-                                            <div className="font-bold text-amber-800">
-                                                ${(item.price * item.quantity).toFixed(2)}
+                                            <div className="flex items-center justify-between">
+                                                <div className="flex items-center space-x-3">
+                                                    <Button
+                                                        variant="outline"
+                                                        size="sm"
+                                                        onClick={() => updateQuantity(item.id, item.quantity - 1)}
+                                                        className="w-8 h-8 p-0 border-amber-300"
+                                                    >
+                                                        <Minus className="w-4 h-4" />
+                                                    </Button>
+                                                    <span className="font-semibold min-w-[2rem] text-center">{item.quantity}</span>
+                                                    <Button
+                                                        variant="outline"
+                                                        size="sm"
+                                                        onClick={() => updateQuantity(item.id, item.quantity + 1)}
+                                                        className="w-8 h-8 p-0 border-amber-300"
+                                                    >
+                                                        <Plus className="w-4 h-4" />
+                                                    </Button>
+                                                </div>
+                                                <div className="font-bold text-amber-800">
+                                                    ${(item.price * item.quantity).toFixed(2)}
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                ))}
+                                    ))}
+                                </div>
                             </div>
 
                             <div className="border-t border-amber-200 pt-4 mt-4">

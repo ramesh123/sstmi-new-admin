@@ -12,11 +12,12 @@ const ADMIN_LINKS = [
   { path: '/volunteer', label: 'Volunteer Dashboard' },
   { path: '/manageusers', label: 'Manage Users' },
   { path: '/managefaqs', label: "Manage FAQ's" },
-  { path: '/sendmail', label: 'Send Mail' },
+  { path: '/sendmail', label: 'Send Mail' }
 ];
 
 const OTHER_LINKS = [
   { path: '/volunteer', label: 'Volunteer Dashboard' },
+  { path: '/servicesdashboard', label: 'Services Dashboard' }
 ];
 
 export default function Navigation() {

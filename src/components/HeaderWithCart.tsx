@@ -71,7 +71,7 @@ export default function OptimizedHeader() {
 
           {/* Right Side: Cart & Logout */}
           <div className="flex items-center space-x-2 md:space-x-6">
-            {/* <button
+            <button
               onClick={() => setIsCartOpen(true)}
               className="relative p-2 text-amber-300 hover:bg-gray-700 rounded-lg transition"
             >
@@ -81,7 +81,7 @@ export default function OptimizedHeader() {
                   {cartCount}
                 </span>
               )}
-            </button> */}
+            </button>
 
             {!isLoginPage && (
               <>
@@ -129,7 +129,7 @@ export default function OptimizedHeader() {
         )} */}
       </header>
 
-      {/* <Cart isOpen={isCartOpen} onClose={() => setIsCartOpen(false)} /> */}
+      <Cart isOpen={isCartOpen} onClose={() => setIsCartOpen(false)} />
     </>
   );
 }
